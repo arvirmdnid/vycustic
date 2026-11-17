@@ -312,7 +312,7 @@ class PlaylistsPage extends StatelessWidget {
                                 color: kSurface2, borderRadius: BorderRadius.circular(12)),
                             child: const Icon(Icons.queue_music, color: kMuted),
                           )
-                        : Thumb(p.tracks.first.thumbnail),
+                        : TrackThumb(p.tracks.first.thumbnail),
                     title: Text(p.name, style: const TextStyle(fontWeight: FontWeight.w600)),
                     subtitle: Text('${p.tracks.length} lagu',
                         style: const TextStyle(color: kMuted)),

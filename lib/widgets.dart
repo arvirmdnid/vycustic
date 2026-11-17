@@ -12,11 +12,11 @@ String fmt(Duration d) {
   return '$m:$s';
 }
 
-class Thumb extends StatelessWidget {
+class TrackThumb extends StatelessWidget {
   final String url;
   final double size;
   final double radius;
-  const Thumb(this.url, {this.size = 52, this.radius = 12, super.key});
+  const TrackThumb(this.url, {this.size = 52, this.radius = 12, super.key});
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
@@ -169,7 +169,7 @@ class TrackTile extends StatelessWidget {
         final active = p.current?.id == track.id;
         final fav = lib.isFav(track.id);
         return ListTile(
-          leading: Thumb(track.thumbnail),
+          leading: TrackThumb(track.thumbnail),
           title: Text(
             track.title,
             maxLines: 1,
@@ -233,7 +233,7 @@ class MiniPlayer extends StatelessWidget {
             ),
             child: Row(
               children: [
-                Thumb(t.thumbnail, size: 44, radius: 10),
+                TrackThumb(t.thumbnail, size: 44, radius: 10),
                 const SizedBox(width: 10),
                 Expanded(
                   child: Column(
@@ -318,7 +318,7 @@ class _FullPlayerState extends State<FullPlayer> {
                       borderRadius: BorderRadius.circular(24),
                       boxShadow: const [BoxShadow(color: kAccentSoft, blurRadius: 40)],
                     ),
-                    child: Thumb(t.thumbnail, size: w, radius: 24),
+                    child: TrackThumb(t.thumbnail, size: w, radius: 24),
                   ),
                 const SizedBox(height: 24),
                 Row(
